@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA</title>
+    <link rel="stylesheet" href="main.css" />
+    <script type="module" src="./js/app.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <body class="home">
+    <header>
+      <p>
+        <span class="back"> &lt; </span>
+      </p>
+      <h1>Giftr</h1>
+      <p>
+        <span class="add"> + </span>
+      </p>
+      <p>
+        <span class="add_gift"> + </span>
+      </p>
+    </header>
+    <main id="home">
+      <h2 class="home__title">Friends & Family</h2>
+      <ul id="file_list" class="home__list">
+        <li class="home__items">
+          <div class="home__subitems">
+            <div class="home__subitem_main">
+              <div class="home__subitem_1">
+                Juan Zapata
+              </div>
+              <div class="home__subitem_2">
+                July 29
+              </div>
+            </div>
+            <div class="home__subitem_edit">
+              <span class="material-symbols-outlined">
+                Edit
+              </span>
+            </div>
+            <div class="home__subitem_gift">
+              <span class="material-symbols-outlined">
+                redeem
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <p></p>
+    </main>
+    <main id="newuser">
+      <div class="contact__wrap">
+        <h2>Add Person</h2>
+        <div id="fileSelected"></div>
+        <form action="#" id="personForm" class="contact__form">
+          <div class="form__unit">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" autofocus>
+          </div>
+          <div class="form__unit">
+            <label for="name">Date of Birth</label>
+            <input type="date" name="dob" id="dob">
+          </div>
+          <input type="hidden" id="cachefile" name="cachefile" value="">
+          <button id="btnSave" class="btn">Save</button>
+          <button id="btnDelete" class="btn">Delete</button>
+          <button id="btnCancel" class="btn">Cancel</button>
+        </form>
+      </div>
+    </main>
+    <main id="page_gifts">
+      <div class="gifts__wrap">
+        <h2 id="gift_title">Gift Ideas for</h2>
+        <div id="fileSelected2"></div>
+        <br>
+        <ul id="gift_list">
+          <li class="gifts__items">
+            <div class="gifts__subitems">
+              <div class="gifts__subitem_main">
+                <div class="gifts__subitem_1">
+                  New shirt
+                </div>
+                <div class="gifts__subitem_2">
+                  Carnaval
+                </div>
+              </div>
+              <div class="gifts__subitem_edit">
+                <span class="material-symbols-outlined">
+                  Edit
+                </span>
+                <button id="1">Edit</button>
+              </div>
+              <div class="gifts__subitem_gift">
+                <span class="material-symbols-outlined">
+                  redeem
+                </span>
+                <button id="2">Delete</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </main>
+
+    <main id="page_gifts_add">
+      <div class="contact__wrap">
+        <h2>Gifts to Add</h2>
+        
+        <form action="#" id="giftForm" class="contact__form">
+          <div class="form__unit">
+            <label for="name">Gift Idea</label>
+            <input type="text" name="gift_idea" id="gift_idea" autofocus>
+          </div>
+          <div class="form__unit">
+            <label for="name">Store | Location</label>
+            <input type="text" name="gift_store" id="gift_store">
+          </div>
+          <div class="form__unit">
+            <label for="name">URL</label>
+            <input type="text" name="gift_url" id="gift_url">
+          </div>
+          <button id="btnGiftSave" class="btn">Save</button>
+          <button id="btnGiftCancel" class="btn">Cancel</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
