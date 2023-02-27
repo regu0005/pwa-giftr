@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SPA</title>
-    <link rel="stylesheet" href="main.css" />
-    <script type="module" src="./js/app.js"></script>
+    <title>Giftr App</title>
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#13d446" />
+    <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#bada55" />
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <link rel="stylesheet" href="./css/main.css" />
+    
+    <script type="module" src="./js/app_sw.js"></script>
+    <script type="module" src="./js/app_giftr.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/web-alerts.js" type="module"></script>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   </head>
   <body class="home">
     <header>
+      <p></p>
       <p>
         <span class="back"> &lt; </span>
       </p>
@@ -23,8 +35,10 @@
         <span class="add_gift"> + </span>
       </p>
     </header>
+    <!-- -------- PEOPLE SECTION --------  -->
     <main id="home">
       <h2 class="home__title">Friends & Family</h2>
+      <div id="alert_people"></div>
       <ul id="file_list" class="home__list">
         <li class="home__items">
           <div class="home__subitems">
@@ -54,7 +68,7 @@
     <main id="newuser">
       <div class="contact__wrap">
         <h2>Add Person</h2>
-        <div id="fileSelected"></div>
+        <div id="alert_person"></div>
         <form action="#" id="personForm" class="contact__form">
           <div class="form__unit">
             <label for="name">Name</label>
@@ -64,19 +78,19 @@
             <label for="name">Date of Birth</label>
             <input type="date" name="dob" id="dob">
           </div>
-          <input type="hidden" id="cachefile" name="cachefile" value="">
           <button id="btnSave" class="btn">Save</button>
           <button id="btnDelete" class="btn">Delete</button>
           <button id="btnCancel" class="btn">Cancel</button>
         </form>
       </div>
     </main>
+    <!-- ------- GIFTS SECTION --------  -->
     <main id="page_gifts">
       <div class="gifts__wrap">
-        <h2 id="gift_title">Gift Ideas for</h2>
-        <div id="fileSelected2"></div>
+        <h2 id="gift_title" class="gifts__title">Gift Ideas for</h2>
+        <div id="alert_gifts_list"></div>
         <br>
-        <ul id="gift_list">
+        <ul id="gift_list" class="gifts__list">
           <li class="gifts__items">
             <div class="gifts__subitems">
               <div class="gifts__subitem_main">
@@ -106,27 +120,31 @@
       </div>
     </main>
 
-    <main id="page_gifts_add">
+    <main id="newgift">
       <div class="contact__wrap">
         <h2>Gifts to Add</h2>
-        
+        <div id="alert_gift"></div>
         <form action="#" id="giftForm" class="contact__form">
           <div class="form__unit">
-            <label for="name">Gift Idea</label>
-            <input type="text" name="gift_idea" id="gift_idea" autofocus>
+            <label for="gift_idea">Gift Idea</label>
+            <input type="text" name="gift_idea" id="gift_idea" class="gift__idea" autofocus>
           </div>
           <div class="form__unit">
-            <label for="name">Store | Location</label>
+            <label for="gift_store">Store | Location</label>
             <input type="text" name="gift_store" id="gift_store">
           </div>
           <div class="form__unit">
-            <label for="name">URL</label>
+            <label for="gift_url">URL</label>
             <input type="text" name="gift_url" id="gift_url">
           </div>
+          
           <button id="btnGiftSave" class="btn">Save</button>
           <button id="btnGiftCancel" class="btn">Cancel</button>
         </form>
       </div>
     </main>
+    
+    <div id="offline" class="offline">aaaa</div>
+    
   </body>
 </html>

@@ -1,17 +1,8 @@
-//file for all the cache functionality
-// caches.open()
-// caches.keys()
-// caches.delete()
-// caches.matchAll()
-// cache.put()
-// cache.match()
-
 const CACHE = {
   cacheVersion: 1,
-  cacheName: null, //this gets set in the init() method
+  cacheName: null,      //this gets set in the init() method
   userName: 'regu0005', //replace this with your own username
   init() {
-    //
     CACHE.cacheName = `Giftr-People-${CACHE.userName}-${CACHE.cacheVersion}`;
   },
   put(name, filetype){
@@ -24,20 +15,9 @@ const CACHE = {
             status: 200,
             statusText: 'ok'
         });
-
-        console.log("PUT: "+name + " file: " + filetype);
-
-        // Put the file into 'Cache Storage' into the cachename 'cache-exercise.v1'
+        // console.log("PUT: "+name + " file: " + filetype);
+        // console.log("Response: "+response);
         cache.put(request,response);
-
-        console.log("Response: "+response);
-        // // Clean items and restore to default values
-        // APP.cleanItems();
-
-        // // Finally reload the files stored into the cachename 'cache-exercise.v1'
-        // APP.getFiles();
-        // return response;
-        
     })
     .catch(console.warn));
   },
@@ -60,7 +40,7 @@ const CACHE = {
       caches
       .open(CACHE.cacheName)
       .then(cache => {
-        console.log("requestDisplay: ",requestDisplay);
+        
           return(
             cache
             .match(requestDisplay, options)
@@ -73,7 +53,6 @@ const CACHE = {
       .catch((err) => {
         console.log("Error: ",err)
       })
-
     );
   },
   deleteCache(deletefile){
@@ -83,11 +62,6 @@ const CACHE = {
       .then((cache) => {
         return cache.delete(deletefile);
       })
-      // .then(() => {
-      //   //delete is complete
-      //   APP.cleanItems();
-      //   APP.getFiles();
-      // })
     );
   },
 };
